@@ -1,6 +1,8 @@
 package com.servlets.learning;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -20,11 +22,12 @@ public class AddServlet extends HttpServlet{
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		int sum = i+j;
-		req.setAttribute("sum", sum);
 		
-		Cookie cookie = new Cookie("sum", sum +"");
-		res.addCookie(cookie);
-		res.sendRedirect("sq");
+		PrintWriter out = res.getWriter();
+		out.println("<html><body bgcolor='cyan'>");
+		out.println("Output: " +sum);
+		out.println("</body></html>");
+		
 		
 		
 	}
