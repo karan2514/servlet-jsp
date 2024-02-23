@@ -24,8 +24,9 @@ public class AddServlet extends HttpServlet{
 		 * PrintWriter out = res.getWriter(); out.println("sum is: "+sum);
 		 */
 		
-		RequestDispatcher rd = req.getRequestDispatcher("sq");
-		rd.forward(req, res);
+		/*
+		 * RequestDispatcher rd = req.getRequestDispatcher("sq"); rd.forward(req, res);
+		 */
 	}
 
 }
